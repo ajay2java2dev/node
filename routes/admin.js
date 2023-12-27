@@ -6,13 +6,13 @@ router.get('/add-product', (req, res, next) => {
     console.log('Add Product middleware!');
     res.send(
         `<body>
-            <form action="/product" method="POST">
+            <form action="/admin/add-product" method="POST">
             <input type="text" name="message">
             <button type="submit">Send</button>
         </form>`); //send allows us to send a response
 });
 
-router.post('/product', (req, res, next) => {
+router.post('/add-product', (req, res, next) => {
     // By default, req.body is undefined, 
     // and is populated when you use body-parsing middleware 
     // such as express.json() or express.urlencoded().
