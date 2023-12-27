@@ -1,15 +1,12 @@
+const path = require('path');
 const express = require('express');
 const router = express.Router(); //This is a mini express app
+const rootDir = require('../helper/path');
 
 // Define your admin routes here
 router.get('/add-product', (req, res, next) => {
     console.log('Add Product middleware!');
-    res.send(
-        `<body>
-            <form action="/admin/add-product" method="POST">
-            <input type="text" name="message">
-            <button type="submit">Send</button>
-        </form>`); //send allows us to send a response
+    res.sendFile(path.join(rootDir, 'views', 'product.html')); 
 });
 
 router.post('/add-product', (req, res, next) => {
